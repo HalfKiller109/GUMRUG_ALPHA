@@ -29,7 +29,7 @@ public class NewBehaviourScript : MonoBehaviour {
 
         hero_Test.rigidbody = gameObject.GetComponent<Rigidbody2D>();
         hero_Test.power_Speed = 3;
-        hero_Test.power_Jump = 500;
+        hero_Test.power_Jump = 850;
 
     }
 
