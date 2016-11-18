@@ -610,6 +610,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.9721425
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013516316560, guid: d6888ff6a54e76044a1f027cb7ed59fb, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64000011273607596, guid: d6888ff6a54e76044a1f027cb7ed59fb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d6888ff6a54e76044a1f027cb7ed59fb, type: 2}
@@ -1303,7 +1307,7 @@ GameObject:
   - 61: {fileID: 1310532944}
   m_Layer: 0
   m_Name: Death Animation
-  m_TagString: Untagged
+  m_TagString: Death Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
