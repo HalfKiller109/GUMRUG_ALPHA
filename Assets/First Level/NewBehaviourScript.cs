@@ -28,9 +28,10 @@ public class NewBehaviourScript : MonoBehaviour {
     {
 
         hero_Test.rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        hero_Test.transform = gameObject.GetComponent<Transform>();
         hero_Test.power_Speed = 3;
         hero_Test.power_Jump = 500;
-
+   
     }
 
 // Update is called once per frame
@@ -51,16 +52,26 @@ void Update ()
 
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i].gameObject != gameObject)
+                if (colliders[i].gameObject.tag == "Ground")
                 {
                     return true;
+                }
+                else if (colliders[i].gameObject.tag == "Death Box")
+                    {
+                    isDead();
                 }
             }
         }
 
         return false;
     }
+    private void isDead()
+    {
 
+        hero_Test.transform.position = new Vector2(-28.87f, 2.1f);
+        hero_Test.rigidbody.velocity = Vector2.zero;      
+
+    }
 
 
 
@@ -71,11 +82,11 @@ void Update ()
 
         if (isGrounded)
         {
-            Debug.Log("My mom grounded me");
+          //  Debug.Log("My mom grounded me");
         }
         else
         {
-            Debug.Log("Wheeeeeeeeeeeee.");
+            //Debug.Log("Wheeeeeeeeeeeee.");
         }
 
 
