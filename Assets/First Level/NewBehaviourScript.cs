@@ -29,8 +29,8 @@ public class NewBehaviourScript : MonoBehaviour {
 
         hero_Test.rigidbody = gameObject.GetComponent<Rigidbody2D>();
         hero_Test.transform = gameObject.GetComponent<Transform>();
-        hero_Test.power_Speed = 3;
-        hero_Test.power_Jump = 500;
+        hero_Test.power_Speed = 10;
+        hero_Test.power_Jump = 850;
    
     }
 
@@ -68,7 +68,7 @@ void Update ()
     private void isDead()
     {
 
-        hero_Test.transform.position = new Vector2(-28.87f, 2.1f);
+        hero_Test.transform.position = new Vector2(-28.87f, -1.64f);
         hero_Test.rigidbody.velocity = Vector2.zero;      
 
     }
@@ -90,20 +90,33 @@ void Update ()
         }
 
 
-        if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            hero_Test.rigidbody.velocity = new Vector2(-hero_Test.power_Speed, hero_Test.rigidbody.velocity.y);
-            
-                 
-        }
-        else if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            hero_Test.rigidbody.velocity = new Vector2(hero_Test.power_Speed, hero_Test.rigidbody.velocity.y);
-        }
+
+
+            if (Input.GetAxisRaw("Horizontal") < 0 && !Input.GetKey(KeyCode.LeftShift))
+            {
+                hero_Test.rigidbody.velocity = new Vector2(-hero_Test.power_Speed, hero_Test.rigidbody.velocity.y);
+
+
+            }
+            else if (Input.GetAxisRaw("Horizontal") > 0 && !Input.GetKey(KeyCode.LeftShift))
+            {
+                hero_Test.rigidbody.velocity = new Vector2(hero_Test.power_Speed, hero_Test.rigidbody.velocity.y);
+            }
+
+            else if (Input.GetAxisRaw("Horizontal") > 0 && Input.GetKey(KeyCode.LeftShift))
+            {
+                hero_Test.rigidbody.velocity = new Vector2(hero_Test.power_dashingSpeed, hero_Test.rigidbody.velocity.y);
+            }
+            else if (Input.GetAxisRaw("Horizontal") > 0 && !Input.GetKey(KeyCode.LeftShift))
+            {
+                hero_Test.rigidbody.velocity = new Vector2(hero_Test.power_dashingSpeed, hero_Test.rigidbody.velocity.y);
+            }
         else
-        {
-            hero_Test.rigidbody.velocity = new Vector2(0.0f, hero_Test.rigidbody.velocity.y);
-        }
+            {
+                hero_Test.rigidbody.velocity = new Vector2(0.0f, hero_Test.rigidbody.velocity.y);
+            }
+
+        
 
         if (Input.GetButtonDown("Jump") && isGrounded )
         {

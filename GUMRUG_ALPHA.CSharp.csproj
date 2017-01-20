@@ -64,11 +64,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Enemies\HapHatScript.cs" />
-    <Compile Include="Assets\First Level\Camera Behavior.cs" />
     <Compile Include="Assets\First Level\Character.cs" />
+    <Compile Include="Assets\First Level\INFINITY.cs" />
     <Compile Include="Assets\First Level\NewBehaviourScript.cs" />
+    <Compile Include="Assets\First Level\NewBehaviourScript1.cs" />
+    <Compile Include="Assets\First Level\NewBehaviourScript2.cs" />
+    <Compile Include="Assets\First Level\NewBehaviourScript3.cs" />
     <Compile Include="Assets\First Level\Test.cs" />
-    <Compile Include="Assets\Start Menu\MenuScript.cs" />
+    <Compile Include="Assets\Start Menu\Item Database.cs" />
+    <Compile Include="Assets\Start Menu\Items.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
